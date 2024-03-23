@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    environment {
+        azure_app_id = credentials('azure_app_id')
+        azure_app_secret = credentials('azure_app_secret')
+        azure_app_tenant = credentials('azure_app_tenant')
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Testing Azure SP'
+                sh 'az login --service-principal -u ${azure_app_id} -p ${azure_app_secret} --tenant ${azure_app_tenant}'
+            }
+        }
+    }
+}
