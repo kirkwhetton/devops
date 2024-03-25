@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    environment {
+        azure_app_id = credentials('azure_app_id')
+        azure_app_secret = credentials('azure_app_secret')
+        azure_app_tenant = credentials('azure_app_tenant')
+    }
+
+    stages {
+        stage('Azure Login') {
+            steps {
+                echo 'Logging in to Azure...'
+                sh 'az login --service-principal -u ${azure_app_id} -p ${azure_app_secret} --tenant ${azure_app_tenant}'
+            }
+        }
+        stage('Deploy VM') {
+            steps {
+                echo 'Deploying VM...'
+                sh 'az vm create \
+                --resource-group mastering_azure_process_automation \
+                --name myUbuntuVM \
+                --image Ubuntu2204 \
+                --size Standard_B1s \
+                --admin-username azureuser \
+                --generate-ssh-keys \
+                --location uksouth'
+            }
+        }
+    }
+}
