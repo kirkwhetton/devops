@@ -1,12 +1,12 @@
 Param (
   [Parameter (Mandatory= $false)]
-  [Array] $VMNames,
+  [array] $VMNames,
 
   [Parameter (Mandatory= $true)]
-  [String] $Subscription = "MySubscriptionName",
+  [string] $Subscription = "MySubscriptionName",
 
   [Parameter (Mandatory= $true)]
-  [String] $ResourceGroup = "MyResourceGroup"
+  [string] $ResourceGroup = "MyResourceGroup"
 )
 
 # Configure Login
