@@ -1,0 +1,7 @@
+The scripts written in these folders should always be tested before running in any production environments.
+Please test and understand what these scripts do before running them in production as they 
+may lead to unexpected consequences.
+
+Thanks,
+
+Kirk Whetton
