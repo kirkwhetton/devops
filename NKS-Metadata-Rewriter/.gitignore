@@ -1,0 +1,10 @@
+# directories
+/dist
+/src
+/node_modules
+
+# files
+*.json
+*.DS_Store
+.DS_Store
+.DS_Store
