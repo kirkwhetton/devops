@@ -1,0 +1,8 @@
+{
+  "name": "sem-blance",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-nks-rewrite-meta": "^0.1.0",
+    "js-beautify": "^1.15.4"
+  }
+}
